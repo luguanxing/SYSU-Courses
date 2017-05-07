@@ -1,0 +1,107 @@
+1. What methods are implemented in Critter?
+
+  Critter(),
+  act(),
+  getActors(),
+  getMoveLocations(),
+  makeMove(Location),
+  processActors(ArrayList<Actor>),
+  selectMoveLocation(ArrayList<Location>)
+
+2. What are the five basic actions common to all critters when they act?
+
+  getActors(),
+  getMoveLocations(),
+  makeMove(Location),
+  processActors(ArrayList<Actor>),
+  selectMoveLocation(ArrayList<Location>)
+
+3. Should subclasses of Critter override the getActors method? Explain.
+
+  if the subclasses want to use different location to get actor, it should override the getActors method
+
+4. Describe the way that a critter could process actors.
+
+   It removes actors except rock and other critters.
+
+5. What three methods must be invoked to make a critter move? Explain each of these methods.
+
+	1.getMoveLocations();	get adjacent locations around it
+	2.selectMoveLocation(ArrayList<Location>);	select a location
+	3.makeMove(Location);	move to the new location
+	
+6. Why is there no Critter constructor?
+
+	it is inherited from actor, so it call super class's constructor as default.
+	
+	
+	
+	
+	
+	
+1. Why does act cause a ChameleonCritter to act differently from a Critter even though ChameleonCritter does not override act?
+
+	beacuse the methods processActors and makeMove in ChameleonCritter are overrided, so the act calls these different methods and make ChameleonCritter acts differently.
+
+2. Why does the makeMove method of ChameleonCritter call super.makeMove?
+
+	beacuse after it changes its direction, it acts like the critter, so it call super.makeMove.
+
+3. How would you make the ChameleonCritter drop flowers in its old location when it moves?
+
+	add codes in makeMove method;
+	Location oldloc = getLocation();
+	if (!oldloc.equals(getLocation())) {
+		Flower flower = new Flower(getColor());
+		flower.putSelfInGrid(getGrid(), oldloc);
+	}
+
+4. Why doesn't ChameleonCritter override the getActors method?
+
+	beacuse it use same function so it's not necessary.
+
+5. Which class contains the getLocation method?
+
+	Actor.
+
+6. How can a Critter access its own grid?
+	
+	Use getGrid method.
+	
+	
+	
+
+1. Why doesn't CrabCritter override the processActors method?
+
+	beacuse it use same function so it's not necessary.
+
+2. Describe the process a CrabCritter uses to find and eat other actors. Does it always eat all neighboring actors? Explain.
+
+	it uses getActor() to check front, right-front or leftfront, then
+	use processActors() remove them.
+
+3. Why is the getLocationsInDirections method used in CrabCritter?
+
+	beacuse when it acts, it can only acts in specify directions. so it need a method to get avaliable locations;
+
+4. If a CrabCritter has location (3, 4) and faces south, what are the possible locations for actors that are returned by a call to the getActors method?
+
+	Location(4, 3)  font-right
+	Location(4, 4)  font
+	Location(4, 5)  font-left
+
+5. What are the similaritiesand differences between the movements of a CrabCritter and a Critter?
+
+	Similarities: random directions to move,remove subjects, dont turn direction when move
+		
+	Differences: Critter processes all actor around it, but CrabCritter processes the actor in front,front-right, front-left of it.
+				CrabCritter can turn, Critter can't turn
+				CrabCritter moves left/right, Critter moves around
+				
+6. How does a CrabCritter determine when it turns instead of moving?
+
+	if loc.equals(getLocation()) == true, then it turns;
+		
+7. Why don't the CrabCritter objects eat each other?
+
+	processActors will check the type and dont remove rock and critter, so the CrabCritter objects don't eat each other.

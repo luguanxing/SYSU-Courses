@@ -1,0 +1,66 @@
+
+1.use getRow() method to access the row value
+
+2.false
+
+3.new Location(4,4)
+
+4.135 degrees
+
+5.getAdjacentLocation() method using compare eight directions to  returns the cloest direction
+
+6.using getOccupiedLocations() method to get an array, then use size() to count;
+	using getNumRows() * getColRows() to get sum, minus the objects sum
+
+7.using Use the isValid() method, like ActorWorld world = new ActorWorld(); gridworld.isValid(new Location(10, 10))
+
+8.because Grid is an interface, it doesn't have methods, it only has declarations.Any class which implements it must must implement all of the
+methods described in the declarations.They can be found in BoundedGrid class and UnboundedGrid class;
+
+9.ArrayList likes array. If we don't know the size We should use ArrayList but slower. If we know the size We should use array[] and quicker.
+
+10.color, direction, grid, location.
+
+11.North, bule
+
+12.because interface is a group of methods, but Actor contains properties and methods, it should be a complete class.
+
+13.no, it cause Exception: This actor is already contained in a grid.
+ and Exception:This actor is not contained in a
+grid.
+
+14.setDirection(actor.getDirection() + Location.HALF_RIGHT)
+
+15.if (!gridworld.isValid(next)) return false;
+
+16.     Grid<Actor> grid = getGrid();
+        if (grid == null || !grid.isValid(p))
+            return false;
+
+17.isValid() method to check if next step is moveable.
+
+18.getAdjacentLocation(direction) method to check locations around object.
+
+19.GetLocation(), getGrid(), getDirection()
+
+20.the bug disappears
+
+21.Yes,beacause it left a flower behind its position.
+
+22.maybe it use getColor() method to get color from bug, it's easier for eyes to follow or catch up the bug
+
+23.if use removeSelfFromGrid it won't left flower, bug if it move out grid by move() mothod it left the flower;
+
+24.in bug move() mothod:
+	 Flower flower = new Flower(getColor());
+   flower.putSelfInGrid(gridworld, location);
+
+25.180/45 = 4 
+
+
+
+
+
+
+
+
