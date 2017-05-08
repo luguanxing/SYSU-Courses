@@ -1,0 +1,4 @@
+main: 5 
+	gcc 5.cpp -o 5 
+clean:
+	rm *.o 
