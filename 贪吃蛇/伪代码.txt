@@ -1,0 +1,13 @@
+//初始化打印地图
+//WHILE not 碰到墙 DO
+// ch＝等待输入
+// CASE ch DO
+// ‘A’:左前进一步，break
+// ‘D’:右前进一步，break
+// ‘W’:上前进一步，break
+// ‘S’:下前进一步，break
+// END CASE
+// 输出字符矩阵
+//END WHILE
+//输出 游戏结束
+//按任意键跳回开头，重新开始
